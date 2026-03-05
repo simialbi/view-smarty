@@ -264,7 +264,7 @@ final class SmartyExtensions
         $url = ArrayHelper::remove($params, 'url');
         $key = ArrayHelper::remove($params, 'key');
         $position = isset($params['position'])
-            ? $this->getViewConstVal($params['position'], WebView::POSITION_READY)
+            ? $this->getViewConstVal((string)$params['position'], WebView::POSITION_READY)
             : WebView::POSITION_READY;
         ArrayHelper::remove($params, 'position');
 
@@ -298,7 +298,7 @@ final class SmartyExtensions
         if (!$repeat) {
             $key = $params['key'] ?? null;
             $position = isset($params['position'])
-                ? $this->getViewConstVal($params['position'], WebView::POSITION_READY)
+                ? $this->getViewConstVal((string)$params['position'], WebView::POSITION_READY)
                 : WebView::POSITION_READY;
 
             $template->tpl_vars['this']->value->registerJs($content, $position, $key);
