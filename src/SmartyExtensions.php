@@ -198,7 +198,6 @@ final class SmartyExtensions
 //            Yii::$app->controller->layout = ArrayHelper::remove($params, 'layout');
 //        }
 
-        $params = [];
         if (!empty($params)) {
             $template->assign('params', $params);
         }
@@ -213,12 +212,12 @@ final class SmartyExtensions
      * Supported attributes: any; all attributes are passed as
      * parameter array to Yii's registerMetaTag function.
      *
-     * @param $params
+     * @param array $params
      * @param Template $template
      *
      * @note Even though this method is public it should not be called directly.
      */
-    public function functionMeta($params, Template $template): void
+    public function functionMeta(array $params, Template $template): void
     {
         $key = $params['name'] ?? null;
 
@@ -433,15 +432,15 @@ final class SmartyExtensions
      *
      * {GridView dataProvider=$provider}
      *
-     * @param $class
-     * @param $params
+     * @param string $class
+     * @param array $params
      * @param Template $template
      *
      * @return string
      * @throws ContainerExceptionInterface
      * @throws \ReflectionException
      */
-    private function widgetFunction($class, $params, Template $template): string
+    private function widgetFunction(string $class, array $params, Template $template): string
     {
         $repeat = false;
         $this->widgetBlock($class, $params, null, $template, $repeat); // WidgetFactory::createWidget($params)
