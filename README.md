@@ -60,7 +60,7 @@ return [
 
 Also add the parameters for `WebView` to `config/common/params.php`:
 
-```phpainerInterface;
+```php
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Simialbi\View\Smarty\SmartyTemplateRenderer;
 use Yiisoft\Aliases\Aliases;
