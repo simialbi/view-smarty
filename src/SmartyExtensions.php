@@ -138,6 +138,9 @@ final class SmartyExtensions
         $alias = ArrayHelper::getValue($params, 'as', StringHelper::baseName($params[ArrayDefinition::CLASS_NAME]));
         $type = ArrayHelper::getValue($params, 'type', 'static');
 
+        /**
+         * @psalm-suppress MixedArrayOffset
+         */
         if (!isset($this->smarty->registered_plugins[$type][$alias])) {
             // Register the class during compile time
             $this->smarty->registerClass($alias, $class);
@@ -183,6 +186,8 @@ final class SmartyExtensions
      * @param array $params
      * @param Template $template
      *
+     * @psalm-suppress MixedMethodCall
+     *
      * @return void
      * @note Even though this method is public it should not be called directly.
      */
@@ -215,6 +220,9 @@ final class SmartyExtensions
      * @param array $params
      * @param Template $template
      *
+     * @psalm-suppress MixedMethodCall
+     *
+     * @return void
      * @note Even though this method is public it should not be called directly.
      */
     public function functionMeta(array $params, Template $template): void
@@ -237,6 +245,8 @@ final class SmartyExtensions
      *
      * @param array $params
      * @param Template $template
+     *
+     * @psalm-suppress MixedMethodCall
      *
      * @return void
      * @note Even though this method is public it should not be called directly.
@@ -274,6 +284,8 @@ final class SmartyExtensions
      * @param Template $template
      * @param bool $repeat
      *
+     * @psalm-suppress MixedMethodCall
+     *
      * @return void
      * @note Even though this method is public it should not be called directly.
      */
@@ -300,6 +312,8 @@ final class SmartyExtensions
      *
      * @param array $params
      * @param Template $template
+     *
+     * @psalm-suppress MixedMethodCall
      *
      * @return void
      * @note Even though this method is public it should not be called directly.
@@ -339,6 +353,8 @@ final class SmartyExtensions
      * @param Template $template
      * @param bool $repeat
      *
+     * @psalm-suppress MixedMethodCall
+     *
      * @return void
      * @note Even though this method is public it should not be called directly.
      */
@@ -360,6 +376,8 @@ final class SmartyExtensions
      *
      * @param string $string Constant identifier name
      * @param int $default Default value
+     *
+     * @psalm-suppress MixedInferredReturnType
      *
      * @return int
      */
