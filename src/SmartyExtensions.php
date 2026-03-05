@@ -367,7 +367,7 @@ final class SmartyExtensions
         if (!$repeat) {
             $key = $params['key'] ?? null;
             $position = isset($params['position'])
-                ? $this->getViewConstVal($params['position'], WebView::POSITION_HEAD)
+                ? $this->getViewConstVal((string)$params['position'], WebView::POSITION_HEAD)
                 : WebView::POSITION_HEAD;
 
             $template->tpl_vars['this']->value->registerCss($content, $position, $params, $key);
