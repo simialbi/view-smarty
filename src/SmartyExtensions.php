@@ -378,6 +378,7 @@ final class SmartyExtensions
      * @param int $default Default value
      *
      * @psalm-suppress MixedInferredReturnType
+     * @psalm-suppress MixedReturnStatement
      *
      * @return int
      */

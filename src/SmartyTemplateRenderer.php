@@ -39,10 +39,7 @@ final class SmartyTemplateRenderer implements TemplateRendererInterface
             $compileId = ArrayHelper::remove($parameters, 'compile_id');
 
             $this->smarty->assign('this', $view);
-
-            foreach ($parameters as $key => $value) {
-                $this->smarty->assign($key, $value);
-            }
+            $this->smarty->assign($parameters);
 
 //            if (!defined('APP_DEBUG') || !APP_DEBUG) {
 //                $this->smarty->registerFilter(Smarty::FILTER_OUTPUT, [TrimWhitespace::class, 'filter'], 'trimwhitespace');
