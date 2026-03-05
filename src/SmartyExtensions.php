@@ -65,7 +65,7 @@ final class SmartyExtensions
      *
      * where route is Yii route and the rest of parameters are passed as is.
      *
-     * @param array $params
+     * @param array<array-key, \Stringable|null|scalar> $params
      * @param Template $template
      *
      * @return string
@@ -90,7 +90,7 @@ final class SmartyExtensions
      *
      * where route is Yii route and the rest of parameters are passed as is.
      *
-     * @param array $params
+     * @param array<array-key, \Stringable|null|scalar> $params
      * @param Template $template
      *
      * @return string
@@ -217,7 +217,7 @@ final class SmartyExtensions
      * Supported attributes: any; all attributes are passed as
      * parameter array to Yii's registerMetaTag function.
      *
-     * @param array $params
+     * @param array<array-key, \Stringable|null|scalar> $params
      * @param Template $template
      *
      * @psalm-suppress MixedMethodCall
@@ -243,7 +243,7 @@ final class SmartyExtensions
      * The position attribute is passed as text without the class prefix.
      * Default is 'POS_END'.
      *
-     * @param array $params
+     * @param array<array-key, \Stringable|null|scalar> $params
      * @param Template $template
      *
      * @psalm-suppress MixedMethodCall
@@ -279,7 +279,7 @@ final class SmartyExtensions
      * The position attribute is passed as text without the class prefix.
      * Default is 'POS_READY'.
      *
-     * @param array $params
+     * @param array<array-key, \Stringable|null|scalar> $params
      * @param ?string $content
      * @param Template $template
      * @param bool $repeat
@@ -310,7 +310,7 @@ final class SmartyExtensions
      * Supported attributes: url, key, depends and valid HTML attributes for the link tag.
      * Refer to Yii documentation for details.
      *
-     * @param array $params
+     * @param array<array-key, \Stringable|null|scalar> $params
      * @param Template $template
      *
      * @psalm-suppress MixedMethodCall
@@ -348,7 +348,7 @@ final class SmartyExtensions
      * Supported attributes: key and valid HTML attributes for the style tag.
      * Refer to Yii documentation for details.
      *
-     * @param array $params
+     * @param array<array-key, \Stringable|null|scalar> $params
      * @param ?string $content
      * @param Template $template
      * @param bool $repeat
@@ -436,6 +436,9 @@ final class SmartyExtensions
             echo $content;
             $out = $widget->render();
 
+            /**
+             * @psalm-suppress PossiblyFalseOperand
+             */
             return ob_get_clean() . $out;
         }
 
