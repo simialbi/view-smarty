@@ -68,6 +68,8 @@ final class SmartyExtensions
      * @param array<array-key, \Stringable|null|scalar> $params
      * @param Template $template
      *
+     * @psalm-suppress MixedArgumentTypeCoercion
+     *
      * @return string
      */
     public function functionPath(array $params, Template $template): string
@@ -92,6 +94,8 @@ final class SmartyExtensions
      *
      * @param array<array-key, \Stringable|null|scalar> $params
      * @param Template $template
+     *
+     * @psalm-suppress MixedArgumentTypeCoercion
      *
      * @return string
      */
