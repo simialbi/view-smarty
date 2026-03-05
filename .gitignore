@@ -11,7 +11,7 @@ nbproject
 
 # sublime text project / workspace files
 *.sublime-project
-*.sublime-workspace
+*.sublime-workspaceyii2
 
 # windows thumbnail cache
 Thumbs.db
@@ -30,6 +30,7 @@ composer.phar
 /phpunit.phar
 /phpunit.xml
 /.phpunit.cache
+/.phpunit.result.cache
 
 # PHP CS Fixer
 /.php-cs-fixer.cache
